@@ -289,16 +289,17 @@ command to execute benchmarks for a pallet will look like this:</p>
     --extrinsic <span class="hljs-string">'\*'</span> \          <span class="hljs-comment"># Select the benchmark case name, using '*' for all</span>
     --steps 20 \                <span class="hljs-comment"># Number of steps across component ranges</span>
     --repeat 10 \               <span class="hljs-comment"># Number of times we repeat a benchmark</span>
-    --raw \                     <span class="hljs-comment"># Optionally output raw benchmark data to stdout</span>
+    --json \                     <span class="hljs-comment"># Optionally output raw benchmark data to stdout</span>
     --output ./                 <span class="hljs-comment"># Output results into a Rust file</span>
 </code></pre>
 <ul>
-<li><code>chain</code> specifies the chain-spec we will use</li>
-<li><code>execution</code> and <code>wasm-execution</code> specify we are benchmarking the compiled wasm code (vs the native
+  <Li>In older versions the <code>json</code> flag was called <code>raw</code> but mixed text with json output.</Li>
+  <li><code>chain</code> specifies the chain-spec we will use</li>
+  <li><code>execution</code> and <code>wasm-execution</code> specify we are benchmarking the compiled wasm code (vs the native
 code as an alternative)</li>
-<li><code>pallet</code> and <code>extrinsic</code> specify which pallet and extrinsics we are benchmarking. With the above
+  <li><code>pallet</code> and <code>extrinsic</code> specify which pallet and extrinsics we are benchmarking. With the above
 arguments we are benchmarking all extrinsics of <code>pallet_example</code>.</li>
-<li><code>steps</code> and <code>repeat</code> means how many steps will be taken to walk through each variable range, and
+  <li><code>steps</code> and <code>repeat</code> means how many steps will be taken to walk through each variable range, and
 how many time the execution state will be repeated.</li>
 </ul>
 <p>Let's take <code>accumulate_dummy</code> benchmark case as an example.</p>
